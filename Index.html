@@ -3,207 +3,260 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Veedhi 💗</title>
+
+<title>Happy Birthday Veedhi 🎀</title>
 
 <style>
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-    background: #fff5f8;
-    color: #793d58;
-    text-align: center;
+    font-family: Georgia, serif;
+    background: #fff0f6;
+    color: #63344e;
+    overflow-x: hidden;
 }
 
-.hero {
+/* Opening Screen */
+
+.opening {
     min-height: 100vh;
+    background: linear-gradient(135deg, #ffc9df, #fff0f7, #e7d5ff);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 25px;
-    background: linear-gradient(135deg, #ffe0eb, #fff5f8, #ffd1e2);
-    position: relative;
-    overflow: hidden;
 }
 
-h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(42px, 9vw, 75px);
-    color: #c43873;
+.opening-box {
+    background: rgba(255,255,255,0.75);
+    padding: 35px 25px;
+    border-radius: 35px;
+    box-shadow: 0 10px 35px rgba(150,80,120,0.2);
+    max-width: 450px;
+}
+
+.crown {
+    font-size: 60px;
+    animation: float 3s infinite ease-in-out;
+}
+
+.opening h1 {
+    font-size: 42px;
+    color: #b14b7e;
     margin: 20px 0;
 }
 
-h1 span {
-    display: block;
-    font-style: italic;
+.opening p {
+    font-size: 20px;
+    line-height: 1.6;
 }
 
-.hero p {
-    max-width: 550px;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-button {
-    border: none;
-    border-radius: 30px;
-    padding: 14px 25px;
-    background: #d94380;
+.enter-btn {
+    background: #e78bb5;
     color: white;
-    font-size: 16px;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 18px;
+    margin-top: 25px;
     cursor: pointer;
-    margin: 12px;
+    box-shadow: 0 5px 15px rgba(180,80,130,0.2);
 }
 
-button:hover {
-    background: #ae285e;
-    transform: translateY(-2px);
+/* Main Website */
+
+.main {
+    display: none;
+    padding: 30px 15px;
+    background: linear-gradient(#fff0f6, #f5eaff);
+    min-height: 100vh;
 }
 
-.heart {
-    position: absolute;
-    font-size: 28px;
-    animation: float 4s infinite ease-in-out;
+.header {
+    text-align: center;
+    padding: 35px 15px;
 }
 
-.heart:nth-child(1) {
-    top: 12%;
-    left: 10%;
+.header h1 {
+    font-size: 40px;
+    color: #b14b7e;
+    margin-bottom: 15px;
 }
 
-.heart:nth-child(2) {
-    top: 20%;
-    right: 10%;
-    animation-delay: 1s;
+.header p {
+    font-size: 20px;
 }
 
-.heart:nth-child(3) {
-    bottom: 15%;
-    left: 12%;
-    animation-delay: 2s;
+.divider {
+    text-align: center;
+    color: #d48caf;
+    font-size: 25px;
+    margin: 25px 0;
 }
 
-.heart:nth-child(4) {
-    bottom: 12%;
-    right: 12%;
-    animation-delay: 1.5s;
-}
-
-@keyframes float {
-    50% {
-        transform: translateY(-20px) rotate(10deg);
-    }
-}
-
-section {
-    padding: 65px 20px;
-}
-
-h2 {
-    font-family: Georgia, serif;
-    font-size: 35px;
-    color: #c43873;
-}
+/* Birthday Letter */
 
 .letter {
-    max-width: 750px;
+    max-width: 650px;
     margin: auto;
-    background: white;
+    background: #fffafc;
     padding: 30px;
-    border-radius: 22px;
-    box-shadow: 0 8px 30px #c4387315;
-    line-height: 1.9;
-    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(120,70,100,0.12);
+    border: 2px solid #f2c5d9;
+    line-height: 1.8;
+    font-size: 19px;
 }
 
-.memories {
-    background: #ffeaf2;
+.letter h2 {
+    text-align: center;
+    color: #b14b7e;
+    margin-bottom: 20px;
 }
 
-.gallery {
+/* Scrapbook */
+
+.scrapbook {
+    max-width: 700px;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 950px;
-    margin: 30px auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
-.photo {
+.polaroid {
     background: white;
-    padding: 12px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px #a33b6515;
+    padding: 10px 10px 20px;
+    box-shadow: 0 5px 15px rgba(120,70,100,0.15);
+    border-radius: 4px;
+    transform: rotate(-2deg);
 }
 
-.photo img {
+.polaroid:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.polaroid img {
     width: 100%;
-    height: 260px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 2px;
 }
 
-.photo input {
-    width: 100%;
+.caption {
+    text-align: center;
     margin-top: 12px;
+    font-size: 16px;
+    color: #8d5270;
+}
+
+/* Surprise */
+
+.surprise-section {
+    text-align: center;
+    margin: 45px auto;
+}
+
+.surprise-btn {
+    background: #d982ac;
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 .surprise {
-    background: linear-gradient(135deg, #ffd4e5, #fff2f7);
-}
-
-#message {
     display: none;
-    max-width: 650px;
+    max-width: 600px;
     margin: 25px auto;
-    padding: 25px;
     background: white;
-    border-radius: 20px;
-    line-height: 1.9;
-}
-
-#message.show {
-    display: block;
-}
-
-.wishes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-}
-
-.wish {
-    max-width: 260px;
-    background: white;
-    border-radius: 18px;
-    padding: 22px;
-    line-height: 1.7;
-    flex: 1 1 220px;
-}
-
-footer {
-    padding: 30px 15px;
-    background: #fff;
-    color: #b43870;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px rgba(120,70,100,0.15);
+    animation: fadeIn 1s;
     line-height: 1.8;
+    font-size: 19px;
 }
 
-@media (max-width: 650px) {
-    .gallery {
-        grid-template-columns: 1fr;
-        max-width: 350px;
+.cake {
+    font-size: 70px;
+    margin: 20px;
+    animation: float 3s infinite ease-in-out;
+}
+
+/* Floating Hearts */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 22px;
+    animation: rise 6s linear forwards;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+@media(max-width:500px) {
+
+    .opening h1 {
+        font-size: 32px;
     }
 
-    .photo img {
-        height: 300px;
+    .header h1 {
+        font-size: 30px;
     }
 
-    section {
-        padding: 45px 16px;
+    .scrapbook {
+        gap: 15px;
+    }
+
+    .polaroid img {
+        height: 170px;
+    }
+
+    .letter {
+        padding: 22px;
+        font-size: 17px;
     }
 }
 </style>
@@ -211,225 +264,233 @@ footer {
 
 <body>
 
-<header class="hero">
-    <div class="heart">💗</div>
-    <div class="heart">🎀</div>
-    <div class="heart">🌸</div>
-    <div class="heart">💕</div>
+<!-- Opening Screen -->
 
-    <p>♡ A little surprise made with love ♡</p>
+<section class="opening" id="opening">
 
-    <h1>Happy Birthday <span>Veedhi! 🎂</span></h1>
+    <div class="opening-box">
 
-    <p>
-        To my best friend, my favourite person,
-        and one of the sweetest parts of my life.
-        Today is all about YOU! 💕
-    </p>
+        <div class="crown">👑</div>
 
-    <button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
-        Open Your Letter 💌
-    </button>
-</header>
+        <h1>A Little Surprise<br>For Veedhi 🎀</h1>
 
-<section id="letter">
-    <h2>A Letter For My Bestie 💗</h2>
+        <p>
+            Someone very special is celebrating
+            her birthday today...
+        </p>
+
+        <button class="enter-btn" onclick="enterWebsite()">
+            Open Your Surprise 💗
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Main Website -->
+
+<section class="main" id="main">
+
+    <div class="header">
+
+        <div class="cake">🎂</div>
+
+        <h1>Happy Birthday Veedhi! 🎉</h1>
+
+        <p>
+            To my beautiful friend,
+            wishing you the happiest birthday.
+        </p>
+
+    </div>
+
+    <div class="divider">
+        ✿ ─────── ✿
+    </div>
+
+    <!-- Birthday Letter -->
 
     <div class="letter">
-        <p>Dear Veedhi, 🌷</p>
+
+        <h2>💌 A Little Birthday Letter</h2>
 
         <p>
-            Happy Birthday to my beautiful best friend!
-            I am so grateful to have you in my life.
-            Thank you for every laugh, every conversation,
-            every memory, and every little moment that
-            becomes special because you are part of it.
+            Dear Veedhi,
         </p>
 
         <p>
-            I wish you endless happiness, beautiful
-            opportunities, success in everything you do,
-            and people who appreciate your kind heart.
-            Whenever life gets difficult, remember that
-            you are important, loved, and capable of
-            achieving wonderful things.
+            Happy Birthday to one of the most
+            special people in my life. ❤️
         </p>
 
         <p>
-            No matter how much life changes, I will always
-            treasure our friendship. I hope we make many
-            more memories, take countless pictures, laugh
-            at silly things, and keep supporting each other.
+            Thank you for being such a wonderful friend.
+            Every memory with you is something
+            I will always treasure.
         </p>
 
         <p>
-            You deserve all the beautiful things in this
-            world. Never stop being your amazing self.
-            Happy Birthday, bestie! 🎂💖
+            I hope this new year of your life brings
+            you endless happiness, beautiful surprises,
+            success, and everything your heart wishes for.
         </p>
 
-        <p><strong>With lots of love, your best friend ♡</strong></p>
-    </div>
-</section>
+        <p>
+            Always keep smiling, keep shining,
+            and never forget how special you are.
+        </p>
 
-<section class="memories">
-    <h2>Our Beautiful Memories 📸</h2>
-    <p>Choose our favourite photos to decorate this page!</p>
+        <p>
+            With lots of love and warm wishes,
+        </p>
 
-    <div class="gallery">
-        <div class="photo">
-            <img id="pic1"
-                 src="https://placehold.co/400x450/ffe0eb/c43873?text=Our+Memory+1"
-                 alt="Our first memory">
-            <input type="file" accept="image/*"
-                   onchange="preview(event, 'pic1')">
-            <p>Our Favourite Day 🌸</p>
-        </div>
+        <p>
+            Your Friend 💗
+        </p>
 
-        <div class="photo">
-            <img id="pic2"
-                 src="https://placehold.co/400x450/ffe0eb/c43873?text=Our+Memory+2"
-                 alt="Our second memory">
-            <input type="file" accept="image/*"
-                   onchange="preview(event, 'pic2')">
-            <p>Bestie Moments 💗</p>
-        </div>
-
-        <div class="photo">
-            <img id="pic3"
-                 src="https://placehold.co/400x450/ffe0eb/c43873?text=Our+Memory+3"
-                 alt="Our third memory">
-            <input type="file" accept="image/*"
-                   onchange="preview(event, 'pic3')">
-            <p>Forever Memories 🎀</p>
-        </div>
     </div>
 
-    <p>Our friendship is one of my favourite memories. 💕</p>
-</section>
+    <div class="divider">
+        ✿ ─────── ✿
+    </div>
 
-<section class="surprise">
-    <h2>A Little Surprise For You 🎁</h2>
+    <!-- Photo Scrapbook -->
 
-    <p>
-        Veedhi, there is one more message waiting
-        for you. Tap the button below! 💗
+    <h2 style="text-align:center; color:#b14b7e; margin-bottom:30px;">
+        Our Little Memory Book 📸
+    </h2>
+
+    <div class="scrapbook">
+
+        <div class="polaroid">
+            <img src="Images/photo1 (1).jpg" alt="Memory 1">
+            <div class="caption">Beautiful memories 💗</div>
+        </div>
+
+        <div class="polaroid">
+            <img src="Images/photo2.jpg" alt="Memory 2">
+            <div class="caption">Always smiling 🎀</div>
+        </div>
+
+        <div class="polaroid">
+            <img src="Images/photo3 (1).jpg" alt="Memory 3">
+            <div class="caption">Little moments ✨</div>
+        </div>
+
+        <div class="polaroid">
+            <img src="Images/photo4 (1).jpg" alt="Memory 4">
+            <div class="caption">Forever special 🌷</div>
+        </div>
+
+    </div>
+
+    <div class="divider">
+        ✿ ─────── ✿
+    </div>
+
+    <!-- Surprise Button -->
+
+    <div class="surprise-section">
+
+        <h2 style="color:#b14b7e;">
+            One More Surprise For You 🎁
+        </h2>
+
+        <button class="surprise-btn" onclick="showSurprise()">
+            Click Here, Birthday Girl 💖
+        </button>
+
+        <div class="surprise" id="surprise">
+
+            <h2>💖 A Special Message For You 💖</h2>
+
+            <p>
+                Veedhi, you deserve all the happiness
+                in the world.
+            </p>
+
+            <p>
+                May your days be filled with love,
+                laughter, beautiful memories,
+                and dreams coming true.
+            </p>
+
+            <p>
+                Thank you for being a part of my life.
+                I am so lucky to have a friend like you.
+            </p>
+
+            <p>
+                Happy Birthday once again! 🎂✨
+            </p>
+
+            <div class="cake">🎂</div>
+
+            <p>
+                Make a wish, birthday girl! 🌷
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="divider">
+        ✿ ─────── ✿
+    </div>
+
+    <p style="text-align:center; padding:30px;">
+        Made with love for Veedhi 🎀
     </p>
 
-    <button onclick="showSurprise()">
-        Click For Your Surprise ✨
-    </button>
-
-    <div id="message">
-        <h2>You Are So Special! 💖</h2>
-
-        <p>
-            If I could give you one thing in life,
-            it would be the ability to see yourself
-            through my eyes. Then you would understand
-            how special you really are.
-        </p>
-
-        <p>
-            Thank you for being my best friend.
-            May your smile stay bright, your dreams
-            grow bigger, and your heart always find
-            reasons to be happy.
-        </p>
-
-        <p>
-            Happy Birthday, Veedhi!
-            More memories, more laughter, and more
-            beautiful years of friendship to come. 🥹💕
-        </p>
-
-        <p>Love you, bestie! 🎂🌷</p>
-    </div>
 </section>
-
-<section>
-    <h2>My Wishes For You 🌷</h2>
-
-    <div class="wishes">
-        <div class="wish">
-            <h3>🌈 Happiness</h3>
-            May your days be filled with smiles,
-            peace, and beautiful surprises.
-        </div>
-
-        <div class="wish">
-            <h3>🌸 Success</h3>
-            May you achieve your dreams and always
-            believe in yourself.
-        </div>
-
-        <div class="wish">
-            <h3>💞 Love</h3>
-            May you always be surrounded by people
-            who appreciate and care for you.
-        </div>
-    </div>
-</section>
-
-<footer>
-    Made with 💗 especially for Veedhi<br>
-    Happy Birthday, Bestie! 🎂🎀
-</footer>
 
 <script>
-function preview(event, imageId) {
-    const file = event.target.files[0];
 
-    if (!file) return;
+function enterWebsite() {
 
-    if (!file.type.startsWith("image/")) {
-        alert("Please choose an image.");
-        return;
-    }
+    document.getElementById("opening").style.display = "none";
 
-    const reader = new FileReader();
+    document.getElementById("main").style.display = "block";
 
-    reader.onload = function(e) {
-        document.getElementById(imageId).src = e.target.result;
-    };
+    createHearts();
 
-    reader.readAsDataURL(file);
 }
 
 function showSurprise() {
-    document.getElementById("message").classList.add("show");
 
-    for (let i = 0; i < 30; i++) {
-        const heart = document.createElement("span");
+    document.getElementById("surprise").style.display = "block";
 
-        heart.textContent = ["💗", "💕", "✨", "🌸"][
-            Math.floor(Math.random() * 4)
-        ];
+    createHearts();
 
-        heart.style.position = "fixed";
+}
+
+function createHearts() {
+
+    for(let i = 0; i < 20; i++) {
+
+        let heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML = ["❤️","💗","💕","🌸","✨"][Math.floor(Math.random() * 5)];
+
         heart.style.left = Math.random() * 100 + "vw";
-        heart.style.top = "-30px";
-        heart.style.fontSize = "25px";
-        heart.style.zIndex = "1000";
-        heart.style.pointerEvents = "none";
-        heart.style.transition = "top 3s linear, opacity 3s";
+
+        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
         document.body.appendChild(heart);
 
-        setTimeout(() => {
-            heart.style.top = "100vh";
-            heart.style.opacity = "0";
-        }, 50);
+        setTimeout(function() {
 
-        setTimeout(() => heart.remove(), 3200);
+            heart.remove();
+
+        }, 8000);
+
     }
 
-    document.getElementById("message").scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
 }
+
 </script>
 
 </body>
-  </html>
-  
+</html>
