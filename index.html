@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You, With Love</title>
+<title>For Youu, With Love</title>
 
 <style>
 :root {
@@ -22,7 +22,9 @@
     box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: Georgia, "Times New Roman", serif;
@@ -31,7 +33,9 @@ body {
     line-height: 1.8;
 }
 
-button { font: inherit; }
+button {
+    font: inherit;
+}
 
 .opening {
     min-height: 100vh;
@@ -41,7 +45,9 @@ button { font: inherit; }
     align-items: center;
     padding: 28px;
     text-align: center;
-    background: radial-gradient(ellipse at top, #f0e1dc, transparent 65%), var(--paper);
+    background:
+        radial-gradient(ellipse at top, #f0e1dc, transparent 65%),
+        var(--paper);
 }
 
 .opening-inner {
@@ -89,12 +95,17 @@ button { font: inherit; }
     color: white;
     border: 1px solid var(--wine);
     cursor: pointer;
-    transition: .25s;
+    transition: background .25s, color .25s;
 }
 
 .primary-button:hover {
     background: transparent;
     color: var(--wine);
+}
+
+.primary-button:focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 4px;
 }
 
 .main {
@@ -126,7 +137,9 @@ button { font: inherit; }
     padding: 85px 10px 70px;
 }
 
-.hero .eyebrow { margin-bottom: 20px; }
+.hero .eyebrow {
+    margin-bottom: 20px;
+}
 
 .hero h2 {
     font-size: clamp(40px, 8vw, 72px);
@@ -163,7 +176,9 @@ button { font: inherit; }
     margin-bottom: 32px;
 }
 
-.section-heading .eyebrow { margin-bottom: 10px; }
+.section-heading .eyebrow {
+    margin-bottom: 10px;
+}
 
 .section-heading h3 {
     font-size: clamp(28px, 5vw, 39px);
@@ -199,6 +214,7 @@ button { font: inherit; }
 
 .letter .signature {
     margin-top: 25px;
+    margin-bottom: 0;
     color: var(--wine);
     font-style: italic;
 }
@@ -210,7 +226,9 @@ button { font: inherit; }
     gap: 28px;
 }
 
-.photo-card { min-width: 0; }
+.photo-card {
+    min-width: 0;
+}
 
 .photo-frame {
     padding: 9px;
@@ -226,20 +244,14 @@ button { font: inherit; }
     background: #eee3dd;
 }
 
-.photo-caption { padding: 12px 2px 0; }
+.photo-caption {
+    padding: 12px 2px 0;
+}
 
 .photo-caption span {
     display: block;
     font-size: 17px;
     color: var(--wine);
-}
-
-.photo-caption small {
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--muted);
 }
 
 /* Final message */
@@ -272,8 +284,20 @@ button { font: inherit; }
     animation: appear .6s ease both;
 }
 
+.message h3 {
+    font-size: 27px;
+    font-weight: normal;
+    color: var(--wine);
+    margin-bottom: 15px;
+}
+
 .message p {
-    margin: 10px auto;
+    margin: 12px auto;
+}
+
+.message .final-wish {
+    color: #b77b80;
+    font-weight: bold;
 }
 
 .footer {
@@ -287,34 +311,82 @@ button { font: inherit; }
 }
 
 @keyframes appear {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 560px) {
-    .main { padding: 0 14px; }
-    .opening-inner { padding: 45px 20px; }
-    .hero { padding: 65px 5px 55px; }
-    .gallery { gap: 15px; }
-    .photo-frame { padding: 6px; }
-    .photo-frame img { height: 190px; }
-    .photo-caption span { font-size: 14px; }
-    .photo-caption small { font-size: 9px; }
-    .letter { padding: 25px 20px; }
-    .letter p { font-size: 16px; }
-    .section { padding: 45px 0; }
+    .main {
+        padding: 0 14px;
+    }
+
+    .opening-inner {
+        padding: 45px 20px;
+    }
+
+    .hero {
+        padding: 65px 5px 55px;
+    }
+
+    .topline {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .gallery {
+        gap: 15px;
+    }
+
+    .photo-frame {
+        padding: 6px;
+    }
+
+    .photo-frame img {
+        height: 190px;
+    }
+
+    .photo-caption span {
+        font-size: 14px;
+    }
+
+    .letter {
+        padding: 25px 20px;
+    }
+
+    .letter p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 45px 0;
+    }
+
+    .message {
+        padding: 22px 18px;
+    }
 }
 
 @media (max-width: 360px) {
-    .gallery { grid-template-columns: 1fr; }
-    .photo-frame img { height: 280px; }
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-frame img {
+        height: 280px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Opening -->
+<!-- Opening screen -->
 <section class="opening" id="opening">
     <div class="opening-inner">
         <div class="eyebrow">A little something, just for you</div>
@@ -322,13 +394,12 @@ button { font: inherit; }
         <h1>For Veedhi,<br><em>with love.</em></h1>
 
         <p>
-            Some people make ordinary days
-            feel a little more special.
-            This little page is for one of them.
+            Some people make ordinary days feel a little more special.
+            This page is for the one who knows me best.
         </p>
 
         <button class="primary-button" onclick="openLetter()">
-            Open your birthday letter
+            Read what I wrote
         </button>
     </div>
 </section>
@@ -342,10 +413,11 @@ button { font: inherit; }
             <span>Made with love</span>
         </div>
 
+        <!-- Birthday heading -->
         <header class="hero">
             <div class="eyebrow">A day worth celebrating</div>
 
-            <h2>Happy Birthday,<br><em>Veedhi.</em></h2>
+            <h2>Happy Birthday,<br><em>BBG 💗.</em></h2>
 
             <p>
                 For the memories we've made,
@@ -360,68 +432,65 @@ button { font: inherit; }
         <section class="section">
             <div class="section-heading">
                 <div class="eyebrow">A few words from me</div>
-                <h3>A Letter for You</h3>
+                <h3>A Note for You</h3>
             </div>
 
             <div class="letter">
                 <p class="salutation">Dear Veedhi,</p>
 
                 <p>
-                    Happy Birthday! I wanted to make something
-                    special for you, something you could come
-                    back to and remember how much you mean to me.
+                    I'm not good at writing long emotional things,
+                    so I'll just say it straight: I love you the most.
                 </p>
 
                 <p>
                     I'm grateful for all the conversations,
                     laughter, little moments, and memories
-                    we've shared. It's often the simplest
-                    things that become the ones we remember most.
+                    we've shared.
                 </p>
 
                 <p>
-                    I hope this year brings you peace,
-                    happiness, new experiences, and the courage
-                    to go after everything you dream of.
-                    I hope you always find reasons to smile
-                    and people who appreciate you for who you are.
+                    You're my mom's favourite, you know that, right?
+                    She calls you her second daughter. You even come
+                    to my house when I'm not there, sit and gossip
+                    with my mom like it's your own home.
                 </p>
 
                 <p>
-                    No matter how busy life gets or how much
-                    things change, I hope we keep making
-                    beautiful memories together.
+                    And you treat Jash like your own brother too,
+                    the two of you sitting and eating bhel together
+                    like I don't even exist. 🙄 Honestly, I don't
+                    know whose friend you are, mine or theirs.
                 </p>
 
                 <p>
-                    Today is your day. Enjoy every little bit
-                    of it, take lots of pictures, laugh a lot,
-                    and make a wish for yourself.
+                    So you're not just my friend, you're basically
+                    part of our family.
                 </p>
 
                 <p class="signature">
                     With lots of love,<br>
-                    Your bestie ♡
+                    Krisha ♡
                 </p>
             </div>
         </section>
 
-        <!-- Memories -->
+        <!-- Photo memories -->
         <section class="section">
             <div class="section-heading">
-                <div class="eyebrow">Little moments, lasting memories</div>
-                <h3>Our Memory Album</h3>
+                <div class="eyebrow">Little moments</div>
+                <h3>Some Memories I Always Remember</h3>
                 <p>A few photographs to keep these moments close.</p>
             </div>
 
             <div class="gallery">
+
                 <article class="photo-card">
                     <div class="photo-frame">
                         <img src="photo1.jpg" alt="A favourite memory together">
                     </div>
                     <div class="photo-caption">
                         <span>The little things</span>
-                        <small>Memory No. 01</small>
                     </div>
                 </article>
 
@@ -431,7 +500,6 @@ button { font: inherit; }
                     </div>
                     <div class="photo-caption">
                         <span>That lovely smile</span>
-                        <small>Memory No. 02</small>
                     </div>
                 </article>
 
@@ -441,7 +509,6 @@ button { font: inherit; }
                     </div>
                     <div class="photo-caption">
                         <span>One for the album</span>
-                        <small>Memory No. 03</small>
                     </div>
                 </article>
 
@@ -451,9 +518,9 @@ button { font: inherit; }
                     </div>
                     <div class="photo-caption">
                         <span>Always a favourite</span>
-                        <small>Memory No. 04</small>
                     </div>
                 </article>
+
             </div>
         </section>
 
@@ -461,42 +528,46 @@ button { font: inherit; }
         <section class="closing">
             <div class="eyebrow">Before you go</div>
 
-            <h3>One last thing,<br>birthday girl.</h3>
+            <h3>Wait, one more thing.</h3>
 
-            <p>
-                There's one more little message waiting for you.
-                Open it whenever you're ready.
-            </p>
+            <p>My wish for you.</p>
 
-            <button class="primary-button" id="messageButton"
-                    onclick="revealMessage()">
+            <button
+                class="primary-button"
+                id="messageButton"
+                onclick="revealMessage()">
                 Read your little surprise
             </button>
 
             <div class="message" id="message">
-                <h3 style="font-size:27px;">A wish for you</h3>
+                <h3>A Wish for You</h3>
 
                 <p>
-                    I hope you look back on this year with
-                    happiness and look forward to the next
-                    with excitement.
+                    Hope this year is way better than the last one.
                 </p>
 
                 <p>
-                    Keep being yourself, keep dreaming,
-                    and never forget that you deserve
-                    wonderful things.
+                    Happy birthday, Veedhi. I'm really glad
+                    you're my person. ♡
                 </p>
 
                 <p>
-                    Happy Birthday, Veedhi. I'm so glad
-                    to have you in my life. ♡
+                    Stay the same, don't change for anyone,
+                    and don't stress about small things.
+                    You deserve all the good stuff, okay?
+                    Don't forget that.
+                </p>
+
+                <p class="final-wish">
+                    Once again, happy birthday to my mom's
+                    second daughter 💋💗. I am so glad to
+                    have you in my life.
                 </p>
             </div>
         </section>
 
         <footer class="footer">
-            MADE ESPECIALLY FOR VEEDHI · WITH LOVE ♡
+            MADE BY KRISHA ♡
         </footer>
 
     </div>
@@ -507,7 +578,7 @@ function openLetter() {
     document.getElementById("opening").style.display = "none";
     document.getElementById("main").style.display = "block";
 
-    window.scrollTo({ top: 0, behavior: "instant" });
+    window.scrollTo(0, 0);
 }
 
 function revealMessage() {
