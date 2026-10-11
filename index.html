@@ -3,475 +3,524 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Birthday Veedhi 🎀</title>
+<title>For You, With Love</title>
 
 <style>
+:root {
+    --paper: #fbf7f2;
+    --white: #fffdfb;
+    --rose: #b77b80;
+    --wine: #683e46;
+    --text: #514442;
+    --muted: #887873;
+    --line: #e9ded7;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
-    font-family: Georgia, serif;
-    background: #fff0f6;
-    color: #63344e;
-    overflow-x: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--paper);
+    color: var(--text);
+    line-height: 1.8;
 }
 
-/* Opening Screen */
+button { font: inherit; }
+
 .opening {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffc9df, #fff0f7, #e7d5ff);
+    min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 28px;
     text-align: center;
-    padding: 25px;
+    background: radial-gradient(ellipse at top, #f0e1dc, transparent 65%), var(--paper);
 }
 
-.opening-box {
-    background: rgba(255,255,255,0.85);
-    padding: 35px 25px;
-    border-radius: 35px;
-    box-shadow: 0 10px 35px rgba(150,80,120,0.2);
-    max-width: 450px;
+.opening-inner {
     width: 100%;
+    max-width: 560px;
+    padding: 60px 25px;
+    border: 1px solid #dfc9c1;
+    outline: 1px solid #dfc9c1;
+    outline-offset: 7px;
+    animation: appear 1s ease both;
 }
 
-.crown {
-    font-size: 60px;
-    animation: float 3s infinite ease-in-out;
+.eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--rose);
 }
 
 .opening h1 {
-    font-size: 42px;
-    color: #b14b7e;
-    margin: 20px 0;
+    margin: 25px 0 18px;
+    color: var(--wine);
+    font-size: clamp(40px, 8vw, 64px);
+    font-weight: normal;
+    line-height: 1.15;
+}
+
+.opening h1 em {
+    color: var(--rose);
+    font-weight: normal;
 }
 
 .opening p {
-    font-size: 20px;
-    line-height: 1.6;
+    max-width: 350px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 16px;
 }
 
-.enter-btn,
-.surprise-btn {
-    background: #e78bb5;
+.primary-button {
+    margin-top: 28px;
+    padding: 12px 25px;
+    background: var(--wine);
     color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-size: 17px;
-    margin-top: 25px;
+    border: 1px solid var(--wine);
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(180,80,130,0.2);
+    transition: .25s;
 }
 
-/* Main Website */
+.primary-button:hover {
+    background: transparent;
+    color: var(--wine);
+}
+
 .main {
     display: none;
-    padding: 30px 15px;
-    background: linear-gradient(#fff0f6, #f5eaff);
-    min-height: 100vh;
+    padding: 0 22px;
+    animation: appear .8s ease both;
 }
 
-.header {
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.topline {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero {
     text-align: center;
-    padding: 35px 15px;
+    padding: 85px 10px 70px;
 }
 
-.header h1 {
-    font-size: 40px;
-    color: #b14b7e;
-    margin-bottom: 15px;
+.hero .eyebrow { margin-bottom: 20px; }
+
+.hero h2 {
+    font-size: clamp(40px, 8vw, 72px);
+    line-height: 1.15;
+    font-weight: normal;
+    color: var(--wine);
 }
 
-.header p {
+.hero h2 em {
+    color: var(--rose);
+    font-weight: normal;
+}
+
+.hero p {
+    max-width: 460px;
+    margin: 22px auto 0;
+    font-size: 17px;
+    color: var(--muted);
+}
+
+.flower {
+    margin-top: 22px;
+    color: var(--rose);
     font-size: 20px;
-    line-height: 1.6;
 }
 
-.divider {
+.section {
+    padding: 60px 0;
+    border-top: 1px solid var(--line);
+}
+
+.section-heading {
     text-align: center;
-    color: #d48caf;
-    font-size: 25px;
-    margin: 30px 0;
+    margin-bottom: 32px;
 }
 
-/* Birthday Letter */
-.letter {
-    max-width: 650px;
-    margin: auto;
-    background: #fffafc;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(120,70,100,0.12);
-    border: 2px solid #f2c5d9;
-    line-height: 1.8;
-    font-size: 18px;
+.section-heading .eyebrow { margin-bottom: 10px; }
+
+.section-heading h3 {
+    font-size: clamp(28px, 5vw, 39px);
+    font-weight: normal;
+    color: var(--wine);
 }
 
-.letter h2 {
-    text-align: center;
-    color: #b14b7e;
-    margin-bottom: 20px;
-}
-
-.letter p {
-    margin-bottom: 14px;
-}
-
-/* Photo Scrapbook */
-.memory-title {
-    text-align: center;
-    color: #b14b7e;
-    margin: 35px 0 30px;
-    font-size: 27px;
-}
-
-.scrapbook {
-    max-width: 750px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
-}
-
-.polaroid {
-    background: white;
-    padding: 10px 10px 20px;
-    box-shadow: 0 5px 15px rgba(120,70,100,0.15);
-    border-radius: 4px;
-    transform: rotate(-2deg);
-}
-
-.polaroid:nth-child(even) {
-    transform: rotate(3deg);
-}
-
-.polaroid img {
-    display: block;
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 2px;
-    background: #ffe2ef;
-}
-
-.caption {
-    text-align: center;
-    margin-top: 12px;
+.section-heading p {
+    margin-top: 8px;
     font-size: 15px;
-    color: #8d5270;
+    color: var(--muted);
 }
 
-/* Surprise */
-.surprise-section {
-    text-align: center;
-    margin: 45px auto;
+/* Birthday letter */
+.letter {
+    max-width: 690px;
+    margin: auto;
+    padding: 38px clamp(22px, 6vw, 55px);
+    background: var(--white);
+    border: 1px solid var(--line);
 }
 
-.surprise {
-    display: none;
-    max-width: 600px;
-    margin: 25px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 25px;
-    box-shadow: 0 5px 20px rgba(120,70,100,0.15);
-    animation: fadeIn 1s;
-    line-height: 1.8;
-    font-size: 18px;
-}
-
-.surprise h2 {
-    color: #b14b7e;
+.letter .salutation {
+    color: var(--rose);
+    font-size: 23px;
     margin-bottom: 18px;
 }
 
-.surprise p {
-    margin-bottom: 12px;
+.letter p {
+    margin-bottom: 15px;
+    font-size: 17px;
 }
 
-.cake {
-    font-size: 65px;
-    margin: 20px;
-    animation: float 3s infinite ease-in-out;
+.letter .signature {
+    margin-top: 25px;
+    color: var(--wine);
+    font-style: italic;
 }
 
-/* Floating Hearts */
-.heart {
-    position: fixed;
-    bottom: -30px;
-    font-size: 22px;
-    animation: rise 6s linear forwards;
-    pointer-events: none;
-    z-index: 10;
+/* Photo gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+.photo-card { min-width: 0; }
+
+.photo-frame {
+    padding: 9px;
+    background: var(--white);
+    border: 1px solid var(--line);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background: #eee3dd;
 }
 
-@keyframes rise {
-    0% {
-        transform: translateY(0);
-        opacity: 0;
-    }
-    20% { opacity: 1; }
-    100% {
-        transform: translateY(-110vh);
-        opacity: 0;
-    }
+.photo-caption { padding: 12px 2px 0; }
+
+.photo-caption span {
+    display: block;
+    font-size: 17px;
+    color: var(--wine);
 }
 
-/* Mobile Friendly */
-@media (max-width: 500px) {
-    .opening h1 {
-        font-size: 32px;
-    }
+.photo-caption small {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
 
-    .opening p {
-        font-size: 17px;
-    }
+/* Final message */
+.closing {
+    text-align: center;
+    padding: 65px 15px 80px;
+    border-top: 1px solid var(--line);
+}
 
-    .header h1 {
-        font-size: 30px;
-    }
+.closing h3 {
+    font-size: clamp(30px, 6vw, 46px);
+    font-weight: normal;
+    color: var(--wine);
+    line-height: 1.3;
+}
 
-    .header p {
-        font-size: 17px;
-    }
+.closing > p {
+    max-width: 450px;
+    margin: 18px auto;
+    color: var(--muted);
+}
 
-    .scrapbook {
-        gap: 15px;
-    }
+.message {
+    display: none;
+    max-width: 550px;
+    margin: 28px auto 0;
+    padding: 28px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    animation: appear .6s ease both;
+}
 
-    .polaroid {
-        padding: 7px 7px 15px;
-    }
+.message p {
+    margin: 10px auto;
+}
 
-    .polaroid img {
-        height: 170px;
-    }
+.footer {
+    padding: 22px 0;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
 
-    .caption {
-        font-size: 13px;
-    }
+@keyframes appear {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-    .letter {
-        padding: 22px;
-        font-size: 16px;
-    }
+@media (max-width: 560px) {
+    .main { padding: 0 14px; }
+    .opening-inner { padding: 45px 20px; }
+    .hero { padding: 65px 5px 55px; }
+    .gallery { gap: 15px; }
+    .photo-frame { padding: 6px; }
+    .photo-frame img { height: 190px; }
+    .photo-caption span { font-size: 14px; }
+    .photo-caption small { font-size: 9px; }
+    .letter { padding: 25px 20px; }
+    .letter p { font-size: 16px; }
+    .section { padding: 45px 0; }
+}
 
-    .surprise {
-        padding: 22px;
-        font-size: 16px;
-    }
-
-    .memory-title {
-        font-size: 23px;
-    }
+@media (max-width: 360px) {
+    .gallery { grid-template-columns: 1fr; }
+    .photo-frame img { height: 280px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Opening Screen -->
+<!-- Opening -->
 <section class="opening" id="opening">
-    <div class="opening-box">
-        <div class="crown">👑</div>
+    <div class="opening-inner">
+        <div class="eyebrow">A little something, just for you</div>
 
-        <h1>A Little Surprise<br>For Veedhi 🎀</h1>
+        <h1>For Veedhi,<br><em>with love.</em></h1>
 
         <p>
-            Someone very special is celebrating
-            her birthday today...
+            Some people make ordinary days
+            feel a little more special.
+            This little page is for one of them.
         </p>
 
-        <button class="enter-btn" onclick="enterWebsite()">
-            Open Your Surprise 💗
+        <button class="primary-button" onclick="openLetter()">
+            Open your birthday letter
         </button>
     </div>
 </section>
 
-<!-- Main Website -->
-<section class="main" id="main">
+<!-- Main website -->
+<main class="main" id="main">
+    <div class="container">
 
-    <div class="header">
-        <div class="cake">🎂</div>
-
-        <h1>Happy Birthday Veedhi! 🎉</h1>
-
-        <p>
-            To my beautiful friend,
-            wishing you the happiest birthday.
-        </p>
-    </div>
-
-    <div class="divider">✿ ─────── ✿</div>
-
-    <!-- Birthday Letter -->
-    <div class="letter">
-        <h2>💌 A Little Birthday Letter</h2>
-
-        <p>Dear Veedhi,</p>
-
-        <p>
-            Happy Birthday to one of the most
-            special people in my life. ❤️
-        </p>
-
-        <p>
-            Thank you for being such a wonderful friend.
-            Every memory with you is something
-            I will always treasure.
-        </p>
-
-        <p>
-            I hope this new year of your life brings
-            you endless happiness, beautiful surprises,
-            success, and everything your heart wishes for.
-        </p>
-
-        <p>
-            Always keep smiling, keep shining,
-            and never forget how special you are.
-        </p>
-
-        <p>With lots of love and warm wishes,</p>
-
-        <p>Your Friend 💗</p>
-    </div>
-
-    <div class="divider">✿ ─────── ✿</div>
-
-    <!-- Photo Scrapbook -->
-    <h2 class="memory-title">Our Little Memory Book 📸</h2>
-
-    <div class="scrapbook">
-
-        <div class="polaroid">
-            <img src="photo1.jpg" alt="Memory 1">
-            <div class="caption">Beautiful memories 💗</div>
+        <div class="topline">
+            <span>A birthday keepsake</span>
+            <span>Made with love</span>
         </div>
 
-        <div class="polaroid">
-            <img src="photo2.jpg" alt="Memory 2">
-            <div class="caption">Always smiling 🎀</div>
-        </div>
+        <header class="hero">
+            <div class="eyebrow">A day worth celebrating</div>
 
-        <div class="polaroid">
-            <img src="photo3.jpg" alt="Memory 3">
-            <div class="caption">Little moments ✨</div>
-        </div>
-
-        <div class="polaroid">
-            <img src="photo4.jpg" alt="Memory 4">
-            <div class="caption">Forever special 🌷</div>
-        </div>
-
-    </div>
-
-    <div class="divider">✿ ─────── ✿</div>
-
-    <!-- Surprise Button -->
-    <div class="surprise-section">
-
-        <h2 style="color:#b14b7e;">
-            One More Surprise For You 🎁
-        </h2>
-
-        <button class="surprise-btn" onclick="showSurprise()">
-            Click Here, Birthday Girl 💖
-        </button>
-
-        <div class="surprise" id="surprise">
-
-            <h2>💖 A Special Message For You 💖</h2>
+            <h2>Happy Birthday,<br><em>Veedhi.</em></h2>
 
             <p>
-                Veedhi, you deserve all the happiness
-                in the world.
+                For the memories we've made,
+                the little moments we'll always remember,
+                and all the beautiful days still ahead.
             </p>
+
+            <div class="flower">— &nbsp; ❀ &nbsp; —</div>
+        </header>
+
+        <!-- Birthday letter -->
+        <section class="section">
+            <div class="section-heading">
+                <div class="eyebrow">A few words from me</div>
+                <h3>A Letter for You</h3>
+            </div>
+
+            <div class="letter">
+                <p class="salutation">Dear Veedhi,</p>
+
+                <p>
+                    Happy Birthday! I wanted to make something
+                    special for you, something you could come
+                    back to and remember how much you mean to me.
+                </p>
+
+                <p>
+                    I'm grateful for all the conversations,
+                    laughter, little moments, and memories
+                    we've shared. It's often the simplest
+                    things that become the ones we remember most.
+                </p>
+
+                <p>
+                    I hope this year brings you peace,
+                    happiness, new experiences, and the courage
+                    to go after everything you dream of.
+                    I hope you always find reasons to smile
+                    and people who appreciate you for who you are.
+                </p>
+
+                <p>
+                    No matter how busy life gets or how much
+                    things change, I hope we keep making
+                    beautiful memories together.
+                </p>
+
+                <p>
+                    Today is your day. Enjoy every little bit
+                    of it, take lots of pictures, laugh a lot,
+                    and make a wish for yourself.
+                </p>
+
+                <p class="signature">
+                    With lots of love,<br>
+                    Your bestie ♡
+                </p>
+            </div>
+        </section>
+
+        <!-- Memories -->
+        <section class="section">
+            <div class="section-heading">
+                <div class="eyebrow">Little moments, lasting memories</div>
+                <h3>Our Memory Album</h3>
+                <p>A few photographs to keep these moments close.</p>
+            </div>
+
+            <div class="gallery">
+                <article class="photo-card">
+                    <div class="photo-frame">
+                        <img src="photo1.jpg" alt="A favourite memory together">
+                    </div>
+                    <div class="photo-caption">
+                        <span>The little things</span>
+                        <small>Memory No. 01</small>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <div class="photo-frame">
+                        <img src="photo2.jpg" alt="A happy moment to remember">
+                    </div>
+                    <div class="photo-caption">
+                        <span>That lovely smile</span>
+                        <small>Memory No. 02</small>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <div class="photo-frame">
+                        <img src="photo3.jpg" alt="Another special memory">
+                    </div>
+                    <div class="photo-caption">
+                        <span>One for the album</span>
+                        <small>Memory No. 03</small>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <div class="photo-frame">
+                        <img src="photo4.jpg" alt="A moment worth remembering">
+                    </div>
+                    <div class="photo-caption">
+                        <span>Always a favourite</span>
+                        <small>Memory No. 04</small>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Personal birthday message -->
+        <section class="closing">
+            <div class="eyebrow">Before you go</div>
+
+            <h3>One last thing,<br>birthday girl.</h3>
 
             <p>
-                May your days be filled with love,
-                laughter, beautiful memories,
-                and dreams coming true.
+                There's one more little message waiting for you.
+                Open it whenever you're ready.
             </p>
 
-            <p>
-                Thank you for being a part of my life.
-                I am so lucky to have a friend like you.
-            </p>
+            <button class="primary-button" id="messageButton"
+                    onclick="revealMessage()">
+                Read your little surprise
+            </button>
 
-            <p>Happy Birthday once again! 🎂✨</p>
+            <div class="message" id="message">
+                <h3 style="font-size:27px;">A wish for you</h3>
 
-            <div class="cake">🎂</div>
+                <p>
+                    I hope you look back on this year with
+                    happiness and look forward to the next
+                    with excitement.
+                </p>
 
-            <p>Make a wish, birthday girl! 🌷</p>
+                <p>
+                    Keep being yourself, keep dreaming,
+                    and never forget that you deserve
+                    wonderful things.
+                </p>
 
-        </div>
+                <p>
+                    Happy Birthday, Veedhi. I'm so glad
+                    to have you in my life. ♡
+                </p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            MADE ESPECIALLY FOR VEEDHI · WITH LOVE ♡
+        </footer>
+
     </div>
-
-    <div class="divider">✿ ─────── ✿</div>
-
-    <p style="text-align:center; padding:30px;">
-        Made with love for Veedhi 🎀
-    </p>
-
-</section>
+</main>
 
 <script>
-function enterWebsite() {
+function openLetter() {
     document.getElementById("opening").style.display = "none";
     document.getElementById("main").style.display = "block";
 
-    window.scrollTo(0, 0);
-    createHearts();
+    window.scrollTo({ top: 0, behavior: "instant" });
 }
 
-function showSurprise() {
-    document.getElementById("surprise").style.display = "block";
-    createHearts();
-}
+function revealMessage() {
+    const message = document.getElementById("message");
+    const button = document.getElementById("messageButton");
 
-function createHearts() {
-    const symbols = ["❤️", "💗", "💕", "🌸", "✨"];
+    message.style.display = "block";
+    button.style.display = "none";
 
-    for (let i = 0; i < 20; i++) {
-        const heart = document.createElement("div");
-
-        heart.className = "heart";
-        heart.textContent = symbols[
-            Math.floor(Math.random() * symbols.length)
-        ];
-
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
-
-        document.body.appendChild(heart);
-
-        setTimeout(function() {
-            heart.remove();
-        }, 8000);
-    }
+    message.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
 }
 </script>
 
