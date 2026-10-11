@@ -21,7 +21,6 @@ body {
 }
 
 /* Opening Screen */
-
 .opening {
     min-height: 100vh;
     background: linear-gradient(135deg, #ffc9df, #fff0f7, #e7d5ff);
@@ -33,11 +32,12 @@ body {
 }
 
 .opening-box {
-    background: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.85);
     padding: 35px 25px;
     border-radius: 35px;
     box-shadow: 0 10px 35px rgba(150,80,120,0.2);
     max-width: 450px;
+    width: 100%;
 }
 
 .crown {
@@ -56,20 +56,20 @@ body {
     line-height: 1.6;
 }
 
-.enter-btn {
+.enter-btn,
+.surprise-btn {
     background: #e78bb5;
     color: white;
     border: none;
-    padding: 15px 35px;
+    padding: 15px 30px;
     border-radius: 30px;
-    font-size: 18px;
+    font-size: 17px;
     margin-top: 25px;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(180,80,130,0.2);
 }
 
 /* Main Website */
-
 .main {
     display: none;
     padding: 30px 15px;
@@ -90,17 +90,17 @@ body {
 
 .header p {
     font-size: 20px;
+    line-height: 1.6;
 }
 
 .divider {
     text-align: center;
     color: #d48caf;
     font-size: 25px;
-    margin: 25px 0;
+    margin: 30px 0;
 }
 
 /* Birthday Letter */
-
 .letter {
     max-width: 650px;
     margin: auto;
@@ -110,7 +110,7 @@ body {
     box-shadow: 0 5px 25px rgba(120,70,100,0.12);
     border: 2px solid #f2c5d9;
     line-height: 1.8;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 .letter h2 {
@@ -119,13 +119,23 @@ body {
     margin-bottom: 20px;
 }
 
-/* Scrapbook */
+.letter p {
+    margin-bottom: 14px;
+}
+
+/* Photo Scrapbook */
+.memory-title {
+    text-align: center;
+    color: #b14b7e;
+    margin: 35px 0 30px;
+    font-size: 27px;
+}
 
 .scrapbook {
-    max-width: 700px;
+    max-width: 750px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 25px;
 }
 
@@ -142,34 +152,25 @@ body {
 }
 
 .polaroid img {
+    display: block;
     width: 100%;
-    height: 220px;
+    height: 240px;
     object-fit: cover;
     border-radius: 2px;
+    background: #ffe2ef;
 }
 
 .caption {
     text-align: center;
     margin-top: 12px;
-    font-size: 16px;
+    font-size: 15px;
     color: #8d5270;
 }
 
 /* Surprise */
-
 .surprise-section {
     text-align: center;
     margin: 45px auto;
-}
-
-.surprise-btn {
-    background: #d982ac;
-    color: white;
-    border: none;
-    padding: 16px 30px;
-    border-radius: 30px;
-    font-size: 18px;
-    cursor: pointer;
 }
 
 .surprise {
@@ -182,17 +183,25 @@ body {
     box-shadow: 0 5px 20px rgba(120,70,100,0.15);
     animation: fadeIn 1s;
     line-height: 1.8;
-    font-size: 19px;
+    font-size: 18px;
+}
+
+.surprise h2 {
+    color: #b14b7e;
+    margin-bottom: 18px;
+}
+
+.surprise p {
+    margin-bottom: 12px;
 }
 
 .cake {
-    font-size: 70px;
+    font-size: 65px;
     margin: 20px;
     animation: float 3s infinite ease-in-out;
 }
 
 /* Floating Hearts */
-
 .heart {
     position: fixed;
     bottom: -30px;
@@ -203,12 +212,8 @@ body {
 }
 
 @keyframes float {
-    0%,100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-12px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
 @keyframes fadeIn {
@@ -227,36 +232,59 @@ body {
         transform: translateY(0);
         opacity: 0;
     }
-    20% {
-        opacity: 1;
-    }
+    20% { opacity: 1; }
     100% {
         transform: translateY(-110vh);
         opacity: 0;
     }
 }
 
-@media(max-width:500px) {
-
+/* Mobile Friendly */
+@media (max-width: 500px) {
     .opening h1 {
         font-size: 32px;
+    }
+
+    .opening p {
+        font-size: 17px;
     }
 
     .header h1 {
         font-size: 30px;
     }
 
+    .header p {
+        font-size: 17px;
+    }
+
     .scrapbook {
         gap: 15px;
+    }
+
+    .polaroid {
+        padding: 7px 7px 15px;
     }
 
     .polaroid img {
         height: 170px;
     }
 
+    .caption {
+        font-size: 13px;
+    }
+
     .letter {
         padding: 22px;
-        font-size: 17px;
+        font-size: 16px;
+    }
+
+    .surprise {
+        padding: 22px;
+        font-size: 16px;
+    }
+
+    .memory-title {
+        font-size: 23px;
     }
 }
 </style>
@@ -265,11 +293,8 @@ body {
 <body>
 
 <!-- Opening Screen -->
-
 <section class="opening" id="opening">
-
     <div class="opening-box">
-
         <div class="crown">👑</div>
 
         <h1>A Little Surprise<br>For Veedhi 🎀</h1>
@@ -282,17 +307,13 @@ body {
         <button class="enter-btn" onclick="enterWebsite()">
             Open Your Surprise 💗
         </button>
-
     </div>
-
 </section>
 
 <!-- Main Website -->
-
 <section class="main" id="main">
 
     <div class="header">
-
         <div class="cake">🎂</div>
 
         <h1>Happy Birthday Veedhi! 🎉</h1>
@@ -301,22 +322,15 @@ body {
             To my beautiful friend,
             wishing you the happiest birthday.
         </p>
-
     </div>
 
-    <div class="divider">
-        ✿ ─────── ✿
-    </div>
+    <div class="divider">✿ ─────── ✿</div>
 
     <!-- Birthday Letter -->
-
     <div class="letter">
-
         <h2>💌 A Little Birthday Letter</h2>
 
-        <p>
-            Dear Veedhi,
-        </p>
+        <p>Dear Veedhi,</p>
 
         <p>
             Happy Birthday to one of the most
@@ -340,56 +354,43 @@ body {
             and never forget how special you are.
         </p>
 
-        <p>
-            With lots of love and warm wishes,
-        </p>
+        <p>With lots of love and warm wishes,</p>
 
-        <p>
-            Your Friend 💗
-        </p>
-
+        <p>Your Friend 💗</p>
     </div>
 
-    <div class="divider">
-        ✿ ─────── ✿
-    </div>
+    <div class="divider">✿ ─────── ✿</div>
 
     <!-- Photo Scrapbook -->
-
-    <h2 style="text-align:center; color:#b14b7e; margin-bottom:30px;">
-        Our Little Memory Book 📸
-    </h2>
+    <h2 class="memory-title">Our Little Memory Book 📸</h2>
 
     <div class="scrapbook">
 
         <div class="polaroid">
-            <img src="Images/photo1 (1).jpg" alt="Memory 1">
+            <img src="photo1.jpg" alt="Memory 1">
             <div class="caption">Beautiful memories 💗</div>
         </div>
 
         <div class="polaroid">
-            <img src="Images/photo2.jpg" alt="Memory 2">
+            <img src="photo2.jpg" alt="Memory 2">
             <div class="caption">Always smiling 🎀</div>
         </div>
 
         <div class="polaroid">
-            <img src="Images/photo3 (1).jpg" alt="Memory 3">
+            <img src="photo3.jpg" alt="Memory 3">
             <div class="caption">Little moments ✨</div>
         </div>
 
         <div class="polaroid">
-            <img src="Images/photo4 (1).jpg" alt="Memory 4">
+            <img src="photo4.jpg" alt="Memory 4">
             <div class="caption">Forever special 🌷</div>
         </div>
 
     </div>
 
-    <div class="divider">
-        ✿ ─────── ✿
-    </div>
+    <div class="divider">✿ ─────── ✿</div>
 
     <!-- Surprise Button -->
-
     <div class="surprise-section">
 
         <h2 style="color:#b14b7e;">
@@ -420,23 +421,16 @@ body {
                 I am so lucky to have a friend like you.
             </p>
 
-            <p>
-                Happy Birthday once again! 🎂✨
-            </p>
+            <p>Happy Birthday once again! 🎂✨</p>
 
             <div class="cake">🎂</div>
 
-            <p>
-                Make a wish, birthday girl! 🌷
-            </p>
+            <p>Make a wish, birthday girl! 🌷</p>
 
         </div>
-
     </div>
 
-    <div class="divider">
-        ✿ ─────── ✿
-    </div>
+    <div class="divider">✿ ─────── ✿</div>
 
     <p style="text-align:center; padding:30px;">
         Made with love for Veedhi 🎀
@@ -445,51 +439,40 @@ body {
 </section>
 
 <script>
-
 function enterWebsite() {
-
     document.getElementById("opening").style.display = "none";
-
     document.getElementById("main").style.display = "block";
 
+    window.scrollTo(0, 0);
     createHearts();
-
 }
 
 function showSurprise() {
-
     document.getElementById("surprise").style.display = "block";
-
     createHearts();
-
 }
 
 function createHearts() {
+    const symbols = ["❤️", "💗", "💕", "🌸", "✨"];
 
-    for(let i = 0; i < 20; i++) {
-
-        let heart = document.createElement("div");
+    for (let i = 0; i < 20; i++) {
+        const heart = document.createElement("div");
 
         heart.className = "heart";
-
-        heart.innerHTML = ["❤️","💗","💕","🌸","✨"][Math.floor(Math.random() * 5)];
+        heart.textContent = symbols[
+            Math.floor(Math.random() * symbols.length)
+        ];
 
         heart.style.left = Math.random() * 100 + "vw";
-
         heart.style.animationDuration = (4 + Math.random() * 4) + "s";
 
         document.body.appendChild(heart);
 
         setTimeout(function() {
-
             heart.remove();
-
         }, 8000);
-
     }
-
 }
-
 </script>
 
 </body>
